@@ -39,7 +39,7 @@ export default function Projects() {
   });
 
   return (
-    <section id="projets" className="py-24 relative">
+    <section id="projets" className="py-16 sm:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <Reveal className="flex items-center gap-3 font-mono text-sm text-cyan-400 mb-3">
           <span className="w-10 h-[2px] grad-bg rounded" />
@@ -65,7 +65,7 @@ export default function Projects() {
             <button
               key={c.id}
               onClick={() => setCat(c.id)}
-              className={`filter-btn px-5 py-2.5 rounded-xl glass text-sm font-semibold ${
+              className={`filter-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl glass text-[13px] sm:text-sm font-semibold ${
                 cat === c.id ? 'active' : ''
               }`}
             >
@@ -84,7 +84,7 @@ export default function Projects() {
               className="proj-card glass rounded-3xl overflow-hidden grad-border flex flex-col cursor-pointer"
               onClick={() => setSelected(p)}
             >
-              <div className="relative h-52 overflow-hidden">
+              <div className="relative h-48 sm:h-52 overflow-hidden">
                 <img src={p.img} alt={p.title} className="proj-img w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <span className="absolute top-3 left-3 chip px-3 py-1.5 rounded-full grad-bg text-white font-bold uppercase">
@@ -104,8 +104,8 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="font-grotesk font-bold text-[17px] leading-snug">{p.title}</h3>
+              <div className="p-5 sm:p-6 flex flex-col flex-1 min-w-0">
+                <h3 className="font-grotesk font-bold text-[16px] sm:text-[17px] leading-snug break-words">{p.title}</h3>
                 <p className="text-[13.5px] opacity-60 mt-2 leading-relaxed flex-1">{p.desc}</p>
                 <div className="flex items-center gap-2 mt-5">
                   <button className="flex-1 grad-bg text-white text-sm font-bold py-2.5 rounded-xl inline-flex items-center justify-center gap-1">

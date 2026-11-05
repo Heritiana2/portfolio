@@ -14,13 +14,13 @@ export default function Testimonials() {
   }, [index]);
 
   return (
-    <section id="temoignages" className="py-24" style={{ background: 'var(--bg2)' }}>
+    <section id="temoignages" className="py-16 sm:py-24" style={{ background: 'var(--bg2)' }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <Reveal className="flex items-center gap-3 font-mono text-sm text-cyan-400 mb-3">
           <span className="w-10 h-[2px] grad-bg rounded" />
           06 • ILS PARLENT DE MOI
         </Reveal>
-        <Reveal as="h2" className="font-grotesk font-bold text-[clamp(2rem,4.5vw,3.2rem)] mb-10">
+        <Reveal as="h2" className="font-grotesk font-bold text-[clamp(2rem,4.5vw,3.2rem)] mb-8 sm:mb-10">
           Ce qu'ils <span className="grad-text">disent.</span>
         </Reveal>
 
@@ -28,18 +28,18 @@ export default function Testimonials() {
           <div className="overflow-hidden">
             <div className="testi-track" style={{ transform: `translateX(-${index * 100}%)` }}>
               {TESTIS.map((t) => (
-                <div key={t.name} className="min-w-full p-7 sm:p-10">
+                <div key={t.name} className="min-w-full p-5 sm:p-10">
                   <div className="flex text-yellow-400 gap-1 mb-4">
                     {Array.from({ length: t.stars }).map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-current" />
                     ))}
                   </div>
-                  <p className="text-[17px] sm:text-xl leading-relaxed font-medium">« {t.text} »</p>
+                  <p className="text-base sm:text-xl leading-relaxed font-medium break-words">« {t.text} »</p>
                   <div className="flex items-center gap-4 mt-6">
                     <img
                       src={t.img}
                       alt={t.name}
-                      className="w-14 h-14 rounded-2xl object-cover border border-white/20"
+                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl object-cover border border-white/20 shrink-0"
                     />
                     <div>
                       <div className="font-bold">{t.name}</div>
@@ -53,7 +53,7 @@ export default function Testimonials() {
           </div>
 
           <div
-            className="flex items-center justify-between px-6 sm:px-8 py-5 border-t"
+            className="flex items-center justify-between gap-3 px-4 sm:px-8 py-4 sm:py-5 border-t"
             style={{ borderColor: 'var(--border)' }}
           >
             <div className="flex gap-2">

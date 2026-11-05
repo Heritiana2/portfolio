@@ -145,7 +145,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden" style={{ background: 'var(--bg2)' }}>
+    <section id="contact" className="py-16 sm:py-24 relative overflow-hidden" style={{ background: 'var(--bg2)' }}>
       <div className="orb w-[500px] h-[500px] bg-violet-700/30 -bottom-40 -right-40" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
         <Reveal className="flex items-center gap-3 font-mono text-sm text-cyan-400 mb-3">
@@ -158,9 +158,9 @@ export default function Contact() {
           <span className="grad-text">Discutons-en ! ☕</span>
         </Reveal>
 
-        <div className="grid lg:grid-cols-[.9fr_1.1fr] gap-8 mt-12">
+        <div className="grid lg:grid-cols-[.9fr_1.1fr] gap-6 sm:gap-8 mt-8 sm:mt-12">
           <div className="flex flex-col gap-5">
-            <Reveal className="glass rounded-3xl p-7 grad-border">
+            <Reveal className="glass rounded-3xl p-5 sm:p-7 grad-border">
               <div className="flex items-center gap-4">
                 <div className="relative">
                   <div className="w-14 h-14 rounded-2xl grad-bg flex items-center justify-center font-grotesk font-bold text-white text-xl">
@@ -180,35 +180,35 @@ export default function Contact() {
               <div className="grid gap-3 mt-6 text-sm">
                 <a
                   href={`mailto:${PROFILE.email}`}
-                  className="flex items-center gap-4 glass rounded-2xl p-4 hover:scale-[1.02] transition-transform group"
+                  className="flex items-center gap-3 sm:gap-4 glass rounded-2xl p-3 sm:p-4 hover:scale-[1.02] transition-transform group"
                 >
-                  <span className="w-11 h-11 rounded-xl grad-bg text-white flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5" />
+                  <span className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl grad-bg text-white flex items-center justify-center shrink-0">
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                   </span>
-                  <span className="flex-1">
-                    <span className="opacity-50 text-[12px] block font-mono">EMAIL</span>
-                    <span className="font-bold group-hover:text-cyan-400 transition">{PROFILE.email}</span>
+                  <span className="flex-1 min-w-0">
+                    <span className="opacity-50 text-[11px] sm:text-[12px] block font-mono">EMAIL</span>
+                    <span className="font-bold text-[13px] sm:text-base break-all group-hover:text-cyan-400 transition">{PROFILE.email}</span>
                   </span>
                 </a>
                 <a
                   href={`tel:${PROFILE.phone.replace(/\s/g, '')}`}
-                  className="flex items-center gap-4 glass rounded-2xl p-4 hover:scale-[1.02] transition-transform group"
+                  className="flex items-center gap-3 sm:gap-4 glass rounded-2xl p-3 sm:p-4 hover:scale-[1.02] transition-transform group"
                 >
-                  <span className="w-11 h-11 rounded-xl bg-green-500 text-white flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5" />
+                  <span className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-green-500 text-white flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                   </span>
-                  <span className="flex-1">
-                    <span className="opacity-50 text-[12px] block font-mono">TÉLÉPHONE</span>
-                    <span className="font-bold">{PROFILE.phone}</span>
+                  <span className="flex-1 min-w-0">
+                    <span className="opacity-50 text-[11px] sm:text-[12px] block font-mono">TÉLÉPHONE</span>
+                    <span className="font-bold text-[13px] sm:text-base">{PROFILE.phone}</span>
                   </span>
                 </a>
-                <div className="flex items-center gap-4 glass rounded-2xl p-4">
-                  <span className="w-11 h-11 rounded-xl bg-pink-500 text-white flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5" />
+                <div className="flex items-center gap-3 sm:gap-4 glass rounded-2xl p-3 sm:p-4">
+                  <span className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-pink-500 text-white flex items-center justify-center shrink-0">
+                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
                   </span>
-                  <span className="flex-1">
-                    <span className="opacity-50 text-[12px] block font-mono">BASE</span>
-                    <span className="font-bold">{PROFILE.location} • Remote 🌍</span>
+                  <span className="flex-1 min-w-0">
+                    <span className="opacity-50 text-[11px] sm:text-[12px] block font-mono">BASE</span>
+                    <span className="font-bold text-[13px] sm:text-base">{PROFILE.location} • Remote 🌍</span>
                   </span>
                 </div>
               </div>
@@ -229,14 +229,14 @@ export default function Contact() {
               </div>
             </Reveal>
 
-            <Reveal className="glass rounded-3xl p-7">
-              <div className="flex items-center justify-between mb-1">
+            <Reveal className="glass rounded-3xl p-5 sm:p-7">
+              <div className="flex flex-col items-start gap-1 sm:flex-row sm:items-center sm:justify-between mb-1">
                 <h4 className="font-grotesk font-bold inline-flex items-center gap-2">
                   <CalendarDays className="w-5 h-5 text-cyan-400" /> Mes disponibilités
                 </h4>
-                <span className="text-[11px] font-mono opacity-50">{getWeekLabel(week)}</span>
+                <span className="text-[10px] sm:text-[11px] font-mono opacity-50">{getWeekLabel(week)}</span>
               </div>
-              <div className="grid grid-cols-7 gap-2 text-center text-[12px] mt-4">
+              <div className="grid grid-cols-7 gap-1 sm:gap-2 text-center text-[11px] sm:text-[12px] mt-4">
                 {CALENDAR.days.map((d, i) => {
                   const date = week[i];
                   const available = isAvailable(date, i);
@@ -245,7 +245,7 @@ export default function Contact() {
                     <div key={i}>
                       <div className="opacity-50 font-mono mb-2">{d}</div>
                       <div
-                        className={`rounded-xl py-2.5 font-bold ${
+                        className={`rounded-lg sm:rounded-xl py-2 sm:py-2.5 text-xs sm:text-sm font-bold ${
                           available ? 'grad-bg text-white shadow-lg cursor-pointer hover:scale-110 transition' : ''
                         } ${today ? 'ring-2 ring-cyan-400 ring-offset-2 ring-offset-transparent' : ''}`}
                         style={!available ? { background: 'rgba(148,163,184,.12)', opacity: 0.4 } : undefined}
@@ -256,15 +256,15 @@ export default function Contact() {
                   );
                 })}
               </div>
-              <p className="text-[12px] opacity-50 mt-4 font-mono">🟣 = créneau libre pour un appel • 30 min offertes</p>
+              <p className="text-[11px] sm:text-[12px] opacity-50 mt-4 font-mono">🟣 = créneau libre pour un appel • 30 min offertes</p>
             </Reveal>
           </div>
 
-          <Reveal className="glass rounded-3xl p-7 sm:p-9 grad-border relative overflow-hidden">
+          <Reveal className="glass rounded-3xl p-5 sm:p-9 grad-border relative overflow-hidden">
             <h3 className="font-grotesk font-bold text-xl mb-1">Envoyez-moi un message ✉️</h3>
             <p className="text-sm opacity-60 mb-6">Formulaire fonctionnel — réponse garantie sous 24h.</p>
 
-            <form className="grid sm:grid-cols-2 gap-4" onSubmit={submit} noValidate>
+            <form className="grid sm:grid-cols-2 gap-3 sm:gap-4 min-w-0" onSubmit={submit} noValidate>
               <input
                 type="checkbox"
                 name="botcheck"
@@ -280,7 +280,7 @@ export default function Contact() {
                 <input
                   value={form.name}
                   onChange={(e) => update('name', e.target.value)}
-                  className="field w-full rounded-xl px-4 py-3 mt-2 text-sm"
+                  className="field w-full min-w-0 rounded-xl px-4 py-3 mt-2 text-sm"
                   placeholder="Ex : Marie Dupont"
                 />
                 {errors.name && <p className="text-red-400 text-[12px] mt-1">Nom requis (2 caractères min).</p>}
@@ -291,7 +291,7 @@ export default function Contact() {
                   type="email"
                   value={form.email}
                   onChange={(e) => update('email', e.target.value)}
-                  className="field w-full rounded-xl px-4 py-3 mt-2 text-sm"
+                  className="field w-full min-w-0 rounded-xl px-4 py-3 mt-2 text-sm"
                   placeholder="marie@entreprise.com"
                 />
                 {errors.email && <p className="text-red-400 text-[12px] mt-1">Email invalide.</p>}
@@ -302,7 +302,7 @@ export default function Contact() {
                   type="tel"
                   value={form.phone}
                   onChange={(e) => update('phone', e.target.value)}
-                  className="field w-full rounded-xl px-4 py-3 mt-2 text-sm"
+                  className="field w-full min-w-0 rounded-xl px-4 py-3 mt-2 text-sm"
                   placeholder="+261 34 00 000 00"
                 />
                 {errors.phone && <p className="text-red-400 text-[12px] mt-1">Numéro invalide.</p>}
@@ -312,7 +312,7 @@ export default function Contact() {
                 <select
                   value={form.type}
                   onChange={(e) => update('type', e.target.value)}
-                  className="field w-full rounded-xl px-4 py-3 mt-2 text-sm"
+                  className="field w-full min-w-0 rounded-xl px-4 py-3 mt-2 text-sm"
                 >
                   {PROJECT_TYPES.map((t) => (
                     <option key={t} className="bg-slate-900 text-white">
@@ -326,7 +326,7 @@ export default function Contact() {
                 <select
                   value={form.budget}
                   onChange={(e) => update('budget', e.target.value)}
-                  className="field w-full rounded-xl px-4 py-3 mt-2 text-sm"
+                  className="field w-full min-w-0 rounded-xl px-4 py-3 mt-2 text-sm"
                 >
                   {BUDGETS.map((b) => (
                     <option key={b} className="bg-slate-900 text-white">
@@ -342,20 +342,20 @@ export default function Contact() {
                   rows={5}
                   value={form.msg}
                   onChange={(e) => update('msg', e.target.value.slice(0, 1000))}
-                  className="field w-full rounded-xl px-4 py-3 mt-2 text-sm resize-none"
+                  className="field w-full min-w-0 rounded-xl px-4 py-3 mt-2 text-sm resize-none"
                   placeholder="Décrivez votre projet, vos délais, vos objectifs..."
                 />
                 {errors.msg && <p className="text-red-400 text-[12px] mt-1">Message de 10 caractères minimum.</p>}
-                <div className="flex justify-between items-center mt-2">
-                  <span className="text-[12px] font-mono opacity-50">{form.msg.length}/1000</span>
-                  <span className="text-[12px] opacity-50">📎 PJ possible après premier contact</span>
+                <div className="flex flex-wrap justify-between items-center gap-1 mt-2">
+                  <span className="text-[11px] sm:text-[12px] font-mono opacity-50">{form.msg.length}/1000</span>
+                  <span className="text-[11px] sm:text-[12px] opacity-50">📎 PJ possible après premier contact</span>
                 </div>
               </div>
               <div className="sm:col-span-2 flex flex-col sm:flex-row gap-3">
                 <button
                   type="submit"
                   disabled={status === 'sending'}
-                  className={`flex-1 text-white font-bold py-4 rounded-2xl shadow-xl shadow-violet-600/30 transition-transform inline-flex items-center justify-center gap-2 ${
+                  className={`flex-1 text-white font-bold py-3.5 sm:py-4 rounded-2xl shadow-xl shadow-violet-600/30 transition-transform inline-flex items-center justify-center gap-2 ${
                     status === 'sent' ? 'bg-green-500' : 'grad-bg hover:scale-[1.02]'
                   }`}
                 >
@@ -372,7 +372,7 @@ export default function Contact() {
                 <button
                   type="button"
                   onClick={planCall}
-                  className="flex-1 glass rounded-2xl py-4 font-bold text-sm text-center hover:bg-white/10 transition inline-flex items-center justify-center gap-2"
+                  className="flex-1 glass rounded-2xl py-3.5 sm:py-4 font-bold text-sm text-center hover:bg-white/10 transition inline-flex items-center justify-center gap-2"
                 >
                   📅 Planifier un appel
                 </button>

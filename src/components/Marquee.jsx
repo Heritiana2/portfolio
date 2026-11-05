@@ -5,7 +5,6 @@ import {
   FileCode2, 
   Server, 
   Coffee, 
-  Leaf, 
   Database, 
   Smartphone, 
   Cpu, 

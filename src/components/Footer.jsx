@@ -12,9 +12,9 @@ const NAV = [
 
 export default function Footer() {
   return (
-    <footer className="border-t pt-14 pb-8 relative" style={{ borderColor: 'var(--border)' }}>
+    <footer className="border-t pt-10 sm:pt-14 pb-8 relative" style={{ borderColor: 'var(--border)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid md:grid-cols-4 gap-8 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-xl grad-bg flex items-center justify-center font-grotesk font-bold text-white">
@@ -69,8 +69,8 @@ export default function Footer() {
           <div>
             <h5 className="font-grotesk font-bold mb-4 text-sm uppercase tracking-wider opacity-80">Contact direct</h5>
             <div className="flex flex-col gap-2.5 text-sm opacity-60">
-              <span className="inline-flex items-center gap-2">
-                <Mail className="w-4 h-4" /> {PROFILE.email}
+              <span className="inline-flex items-start gap-2 break-all">
+                <Mail className="w-4 h-4 shrink-0 mt-0.5" /> {PROFILE.email}
               </span>
               <span className="inline-flex items-center gap-2">
                 <Phone className="w-4 h-4" /> {PROFILE.phone}

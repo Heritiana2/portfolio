@@ -61,18 +61,18 @@ export default function Terminal() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <Reveal className="glass rounded-3xl overflow-hidden grad-border">
           <div
-            className="flex items-center gap-2 px-5 py-3 border-b"
+            className="flex items-center gap-2 px-4 sm:px-5 py-3 border-b"
             style={{ borderColor: 'var(--border)' }}
           >
             <span className="w-3 h-3 rounded-full bg-red-500" />
             <span className="w-3 h-3 rounded-full bg-yellow-500" />
             <span className="w-3 h-3 rounded-full bg-green-500" />
-            <span className="ml-3 font-mono text-[12px] opacity-60">
+            <span className="ml-2 sm:ml-3 flex-1 min-w-0 truncate font-mono text-[11px] sm:text-[12px] opacity-60">
               heritiana@portfolio: ~ — essaie « help » puis Entrée
             </span>
             <button
               onClick={() => run('cv')}
-              className="ml-auto text-[11px] font-mono px-3 py-1 rounded-lg grad-bg text-white"
+              className="ml-auto shrink-0 text-[10px] sm:text-[11px] font-mono px-2.5 sm:px-3 py-1 rounded-lg grad-bg text-white"
             >
               ./my-cv.sh
             </button>
@@ -80,7 +80,7 @@ export default function Terminal() {
 
           <div
             ref={bodyRef}
-            className="terminal p-5 sm:p-6 text-[13.5px] leading-relaxed min-h-[280px] max-h-[380px] overflow-y-auto"
+            className="terminal p-4 sm:p-6 text-[12.5px] sm:text-[13.5px] leading-relaxed min-h-[260px] sm:min-h-[280px] max-h-[380px] overflow-y-auto break-words"
           >
             {lines.map((l, i) => (
               <div key={i} className={`${l.cls} mt-1`} dangerouslySetInnerHTML={{ __html: l.html }} />
@@ -88,7 +88,7 @@ export default function Terminal() {
           </div>
 
           <div
-            className="flex items-center gap-2 px-5 py-4 border-t"
+            className="flex items-center gap-2 px-4 sm:px-5 py-3 sm:py-4 border-t"
             style={{ borderColor: 'var(--border)' }}
             onClick={() => inputRef.current?.focus()}
           >
@@ -98,7 +98,7 @@ export default function Terminal() {
               value={value}
               onChange={(e) => setValue(e.target.value)}
               onKeyDown={onKeyDown}
-              className="terminal-input text-sm"
+              className="terminal-input text-sm min-w-0"
               placeholder="help, about, skills, projects, contact, cv, clear..."
               autoComplete="off"
             />

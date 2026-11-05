@@ -14,7 +14,7 @@ export default function BackToTop() {
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       title="Retour en haut"
-      className={`fixed bottom-6 right-6 z-[150] w-12 h-12 rounded-2xl grad-bg text-white shadow-xl items-center justify-center hover:scale-110 transition ${
+      className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[150] w-11 h-11 sm:w-12 sm:h-12 rounded-2xl grad-bg text-white shadow-xl items-center justify-center hover:scale-110 transition ${
         shown ? 'flex' : 'hidden'
       }`}
     >

@@ -16,7 +16,7 @@ export default function Reveal({ children, className = '', as: Tag = 'div', dela
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.05 }
     );
     observer.observe(el);
     return () => observer.disconnect();

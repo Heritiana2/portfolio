@@ -33,6 +33,7 @@ html.light,
 html {
   background: var(--bg);
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -41,6 +42,13 @@ body {
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   transition: background-color 0.5s, color 0.5s;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
 }
 
 body::before {
@@ -126,6 +134,13 @@ html.light .glass {
 @keyframes orbFloat {
   0% { transform: translate(0, 0) scale(1); }
   100% { transform: translate(40px, -40px) scale(1.15); }
+}
+
+@media (max-width: 640px) {
+  .orb {
+    filter: blur(70px);
+    opacity: 0.35;
+  }
 }
 
 .marquee-track {
@@ -272,7 +287,7 @@ html.light .skill-bar {
 }
 
 .faq-item.open .faq-answer {
-  max-height: 400px;
+  max-height: 900px;
 }
 
 .faq-item.open .faq-icon {

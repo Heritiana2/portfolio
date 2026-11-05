@@ -18,7 +18,9 @@ export default function Particles() {
     resize();
     window.addEventListener('resize', resize);
 
-    const pts = Array.from({ length: 70 }, () => ({
+    const isSmall = window.innerWidth < 640;
+    const maxDist = isSmall ? 90 : 130;
+    const pts = Array.from({ length: isSmall ? 30 : 70 }, () => ({
       x: Math.random() * 2000,
       y: Math.random() * 1200,
       vx: (Math.random() - 0.5) * 0.5,
@@ -44,11 +46,11 @@ export default function Particles() {
           const dx = pts[i].x - pts[j].x;
           const dy = pts[i].y - pts[j].y;
           const d = Math.hypot(dx, dy);
-          if (d < 130) {
+          if (d < maxDist) {
             ctx.beginPath();
             ctx.moveTo(pts[i].x % W, pts[i].y % H);
             ctx.lineTo(pts[j].x % W, pts[j].y % H);
-            ctx.strokeStyle = `rgba(124,58,237,${(1 - d / 130) * 0.25})`;
+            ctx.strokeStyle = `rgba(124,58,237,${(1 - d / maxDist) * 0.25})`;
             ctx.stroke();
           }
         }

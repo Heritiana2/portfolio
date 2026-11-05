@@ -118,7 +118,7 @@ const Hero = () => {
   }, [charIndex, isDeleting, textIndex]);
 
   return (
-    <section id="accueil" className="relative min-h-screen flex items-center pt-32 pb-16 overflow-hidden">
+    <section id="accueil" className="relative min-h-screen flex items-center pt-28 sm:pt-32 pb-16 overflow-hidden">
       <Particles />
       <div className="orb w-[500px] h-[500px] bg-violet-700/60 -top-40 -left-40" />
       <div className="orb w-[420px] h-[420px] bg-cyan-500/40 top-1/3 -right-32" style={{ animationDelay: '2s' }} />
@@ -126,16 +126,16 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center relative w-full">
         <div className="lg:col-span-7">
-          <div className="inline-flex items-center gap-3 glass rounded-full pl-2 pr-4 py-1.5 text-xs sm:text-sm mb-6 border border-white/10">
-            <span className="flex items-center gap-2 grad-bg text-white px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-green-400 pulse-dot" /> Dispo à partir du 21 Décembre 2026
+          <div className="inline-flex max-w-full flex-wrap items-center gap-2 sm:gap-3 glass rounded-2xl sm:rounded-full pl-2 pr-3 sm:pr-4 py-1.5 text-[11px] sm:text-sm mb-6 border border-white/10">
+            <span className="flex items-center gap-2 grad-bg text-white px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wide sm:tracking-wider">
+              <span className="w-2 h-2 rounded-full bg-green-400 pulse-dot shrink-0" /> Dispo à partir du 21 Décembre 2026
             </span>
             <span className="opacity-90 font-medium">{PROFILE.available}</span>
           </div>
 
           <p className="font-mono text-cyan-400 text-sm mb-3 font-semibold">👋 Bonjour, je suis</p>
 
-          <h1 className="font-bold leading-[1.05] tracking-tight text-4xl sm:text-6xl lg:text-7xl mb-4">
+          <h1 className="font-bold leading-[1.05] tracking-tight text-4xl sm:text-6xl lg:text-7xl mb-4 break-words">
             {PROFILE.shortName}
             <br />
             <span className="grad-text">Développeur</span>
@@ -153,17 +153,17 @@ const Hero = () => {
             stage de fin d'études pour mettre à profit mes compétences techniques qui dure 6 mois ( du 21 décembre 2026 au 6 juin 2027 ).
           </p>
 
-          <div className="flex flex-wrap gap-4 mt-8">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mt-8">
             <a
               href="#projets"
-              className="grad-bg text-white font-semibold px-7 py-3.5 rounded-2xl shadow-xl shadow-purple-600/25 hover:scale-[1.03] transition-transform inline-flex items-center gap-2"
+              className="w-full sm:w-auto justify-center grad-bg text-white font-semibold px-7 py-3.5 rounded-2xl shadow-xl shadow-purple-600/25 hover:scale-[1.03] transition-transform inline-flex items-center gap-2"
             >
               <Rocket className="w-4 h-4" /> Voir mes projets
             </a>
 
             <button
               onClick={downloadCV}
-              className="glass font-semibold px-7 py-3.5 rounded-2xl transition inline-flex items-center gap-2 grad-border hover:bg-white/10"
+              className="w-full sm:w-auto justify-center glass font-semibold px-7 py-3.5 rounded-2xl transition inline-flex items-center gap-2 grad-border hover:bg-white/10"
             >
               <Download className="w-4 h-4 text-cyan-400" /> Télécharger mon CV
             </button>
@@ -172,15 +172,15 @@ const Hero = () => {
               href={PROFILE.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="glass px-5 py-3.5 rounded-2xl font-mono text-sm opacity-80 hover:opacity-100 transition inline-flex items-center gap-2"
+              className="w-full sm:w-auto justify-center glass px-5 py-3.5 rounded-2xl font-mono text-sm opacity-80 hover:opacity-100 transition inline-flex items-center gap-2"
             >
               <GithubIcon className="w-4 h-4" /> GitHub
             </a>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-10 max-w-xl">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 sm:mt-10 max-w-xl">
             {STATS.map((s) => (
-              <div key={s.label} className="glass rounded-2xl p-4 text-center grad-border">
+              <div key={s.label} className="glass rounded-2xl p-3 sm:p-4 text-center grad-border">
                 <div className="font-grotesk font-bold text-2xl grad-text">
                   <Counter value={s.value} suffix={s.suffix} />
                 </div>
@@ -191,15 +191,15 @@ const Hero = () => {
         </div>
 
         {/* Colonne de droite : Modèle d'image arrondie/ovale avec badges flottants à la manière du modèle */}
-        <div className="lg:col-span-5 relative flex justify-center lg:justify-end px-4 sm:px-0">
-          <div className="relative w-[300px] sm:w-[360px] h-[400px] flex items-center justify-center">
+        <div className="lg:col-span-5 relative flex justify-center lg:justify-end px-0">
+          <div className="relative w-[260px] sm:w-[360px] h-[340px] sm:h-[400px] flex items-center justify-center">
             
             {/* Halo de lumière en arrière-plan */}
             <div className="absolute inset-0 bg-gradient-to-tr from-violet-600/30 to-cyan-400/30 blur-3xl rounded-full scale-110" />
 
             {/* Container arrondi ovale style portrait */}
-            <div className="relative w-[280px] sm:w-[320px] h-[360px] sm:h-[400px] rounded-[100px] p-2 bg-gradient-to-b from-cyan-500/30 via-violet-500/20 to-transparent border border-white/20 shadow-2xl backdrop-blur-sm overflow-hidden">
-              <div className="w-full h-full rounded-[92px] overflow-hidden bg-slate-950 relative">
+            <div className="relative w-[240px] sm:w-[320px] h-[300px] sm:h-[400px] rounded-[80px] sm:rounded-[100px] p-2 bg-gradient-to-b from-cyan-500/30 via-violet-500/20 to-transparent border border-white/20 shadow-2xl backdrop-blur-sm overflow-hidden">
+              <div className="w-full h-full rounded-[72px] sm:rounded-[92px] overflow-hidden bg-slate-950 relative">
                 <img 
                   src={PROFILE.avatar || "/images/mon-avatar.jpeg"} 
                   alt={PROFILE.name}
@@ -215,7 +215,7 @@ const Hero = () => {
             </div>
 
             {/* Badge flottant haut gauche : React */}
-            <div className="float-badge absolute -left-4 sm:-left-8 top-6 bg-slate-900/90 backdrop-blur-md border border-white/20 rounded-2xl px-3.5 py-2.5 flex items-center gap-3 shadow-2xl z-20">
+            <div className="float-badge absolute -left-2 sm:-left-8 top-6 bg-slate-900/90 backdrop-blur-md border border-white/20 rounded-2xl px-3 sm:px-3.5 py-2 sm:py-2.5 flex items-center gap-2.5 sm:gap-3 shadow-2xl z-20">
               <div className="w-8 h-8 rounded-lg bg-[#61dafb]/15 text-[#61dafb] flex items-center justify-center text-sm font-bold">
                 ⚛️
               </div>
@@ -226,7 +226,7 @@ const Hero = () => {
             </div>
 
             {/* Badge flottant milieu droit : Node.js */}
-            <div className="float-badge d2 absolute -right-4 sm:-right-8 top-1/3 bg-slate-900/90 backdrop-blur-md border border-white/20 rounded-2xl px-3.5 py-2.5 flex items-center gap-3 shadow-2xl z-20">
+            <div className="float-badge d2 absolute -right-2 sm:-right-8 top-1/3 bg-slate-900/90 backdrop-blur-md border border-white/20 rounded-2xl px-3 sm:px-3.5 py-2 sm:py-2.5 flex items-center gap-2.5 sm:gap-3 shadow-2xl z-20">
               <div className="w-8 h-8 rounded-lg bg-green-500/15 text-green-400 flex items-center justify-center text-sm font-bold">
                 🟢
               </div>
@@ -237,7 +237,7 @@ const Hero = () => {
             </div>
 
             {/* Badge flottant bas gauche : SQL / SGBD */}
-            <div className="float-badge d3 absolute -left-2 sm:-left-6 bottom-10 bg-slate-900/90 backdrop-blur-md border border-white/20 rounded-2xl px-3.5 py-2.5 flex items-center gap-3 shadow-2xl z-20">
+            <div className="float-badge d3 absolute left-0 sm:-left-6 bottom-10 bg-slate-900/90 backdrop-blur-md border border-white/20 rounded-2xl px-3 sm:px-3.5 py-2 sm:py-2.5 flex items-center gap-2.5 sm:gap-3 shadow-2xl z-20">
               <div className="w-8 h-8 rounded-lg bg-indigo-400/15 text-indigo-300 flex items-center justify-center text-sm font-bold">
                 🗄️
               </div>
@@ -248,7 +248,7 @@ const Hero = () => {
             </div>
 
             {/* Badge bonus bas droit style "+6 mois stage" comme le "+4 ans" de la photo */}
-            <div className="float-badge d2 absolute -right-2 sm:-right-4 bottom-6 bg-cyan-500/90 text-slate-950 font-bold rounded-2xl px-3 py-1.5 text-[11px] shadow-xl z-20 border border-cyan-300">
+            <div className="float-badge d2 absolute right-0 sm:-right-4 bottom-6 bg-cyan-500/90 text-slate-950 font-bold rounded-2xl px-3 py-1.5 text-[10px] sm:text-[11px] shadow-xl z-20 border border-cyan-300">
               ⚡ 6 mois de stage
             </div>
 
@@ -258,7 +258,7 @@ const Hero = () => {
 
       <a
         href="#apropos"
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition text-[11px] font-mono tracking-widest uppercase"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition text-[11px] font-mono tracking-widest uppercase"
       >
         Scroll
         <span className="w-6 h-10 rounded-full border border-current flex justify-center pt-2">

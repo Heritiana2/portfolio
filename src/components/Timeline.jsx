@@ -20,13 +20,13 @@ const EDUCATION = [
 
 export default function Timeline() {
   return (
-    <section id="parcours" className="py-24" style={{ background: 'var(--bg2)' }}>
+    <section id="parcours" className="py-16 sm:py-24" style={{ background: 'var(--bg2)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <Reveal className="flex items-center gap-3 font-mono text-sm text-cyan-400 mb-3">
           <span className="w-10 h-[2px] grad-bg rounded" />
           04 • PARCOURS & EXPÉRIENCE
         </Reveal>
-        <Reveal as="h2" className="font-grotesk font-bold text-[clamp(2rem,4.5vw,3.2rem)] mb-12">
+        <Reveal as="h2" className="font-grotesk font-bold text-[clamp(2rem,4.5vw,3.2rem)] mb-8 sm:mb-12">
           Mon <span className="grad-text">parcours.</span>
         </Reveal>
 
@@ -42,7 +42,7 @@ export default function Timeline() {
                   >
                     <span className="text-lg">{t.icon}</span>
                   </div>
-                  <div className="glass rounded-3xl p-6 flex-1 grad-border hover:-translate-y-1 transition-transform">
+                  <div className="glass rounded-3xl p-5 sm:p-6 flex-1 min-w-0 break-words grad-border hover:-translate-y-1 transition-transform">
                     <span
                       className="chip px-3 py-1 rounded-full font-bold"
                       style={{ background: `${t.color}22`, color: t.color, border: `1px solid ${t.color}44` }}
@@ -69,7 +69,7 @@ export default function Timeline() {
           </div>
 
           <div className="flex flex-col gap-6">
-            <Reveal className="glass rounded-3xl p-7 grad-border">
+            <Reveal className="glass rounded-3xl p-5 sm:p-7 grad-border">
               <h4 className="font-grotesk font-bold text-lg mb-5">🎓 Formation</h4>
               <div className="flex flex-col gap-5 text-sm">
                 {EDUCATION.map((e) => (
@@ -90,7 +90,7 @@ export default function Timeline() {
               </div>
             </Reveal>
 
-            <Reveal className="grad-bg rounded-3xl p-7 text-white relative overflow-hidden noise">
+            <Reveal className="grad-bg rounded-3xl p-6 sm:p-7 text-white relative overflow-hidden noise">
               <div className="font-grotesk font-bold text-xl leading-snug">
                 « À la recherche d'un stage pour apprendre et contribuer. »
               </div>

@@ -43,19 +43,19 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">  
-            <div className={`glass rounded-2xl mt-4 px-4 sm:px-6 py-3 flex items-center justify-between relative overflow-hidden transition-all duration-300 ${scrolled ? 'shadow-2xl border-white/20' : ''}`}>
+        <div className="max-w-7xl mx-auto px-3 sm:px-6">  
+            <div className={`glass rounded-2xl mt-4 px-3 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-2 relative overflow-hidden transition-all duration-300 ${scrolled ? 'shadow-2xl border-white/20' : ''}`}>
             
             {/* LOGO */}
-            <a href="#accueil" className="flex items-center gap-3 group">
-                <div className="w-10 h-10 rounded-xl grad-bg flex items-center justify-center font-bold text-white text-lg shadow-lg shadow-purple-600/30 group-hover:rotate-12 transition-transform">
+            <a href="#accueil" className="flex items-center gap-2 sm:gap-3 group min-w-0">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl grad-bg flex items-center justify-center font-bold text-white text-base sm:text-lg shadow-lg shadow-purple-600/30 group-hover:rotate-12 transition-transform shrink-0">
                 H
                 </div>
-                <div className="leading-tight">
-                <div className="font-bold text-[17px] tracking-tight">
+                <div className="leading-tight min-w-0">
+                <div className="font-bold text-[15px] sm:text-[17px] tracking-tight whitespace-nowrap">
                     heritiana<span className="grad-text">.dev</span>
                 </div>
-                <div className="text-[11px] font-mono opacity-60">Dévéloppeur Junior</div>
+                <div className="text-[10px] sm:text-[11px] font-mono opacity-60 whitespace-nowrap">Dévéloppeur Junior</div>
                 </div>
             </a>
 
@@ -75,12 +75,12 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             </nav>
 
             {/* ACTIONS (THEME & CTA) */}
-            <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
                 {/* Toggle Dark/Light Mode */}
                 <button
                 onClick={() => setDarkMode(!darkMode)}
                 title="Changer de thème"
-                className="w-10 h-10 rounded-xl glass flex items-center justify-center hover:scale-105 transition-transform"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl glass flex items-center justify-center hover:scale-105 transition-transform"
                 >
                 {darkMode ? <Sun className="w-5 h-5 text-amber-300" /> : <Moon className="w-5 h-5 text-indigo-600" />}
                 </button>
@@ -96,7 +96,8 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                 {/* Burger Button Mobile */}
                 <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="lg:hidden w-10 h-10 rounded-xl glass flex items-center justify-center"
+                aria-label="Ouvrir le menu"
+                className="lg:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-xl glass flex items-center justify-center"
                 >
                 {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                 </button>
@@ -105,7 +106,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
             {/* MOBILE MENU DROPDOWN */}
             {isMenuOpen && (
-            <div className="lg:hidden glass rounded-2xl mt-2 p-4 flex flex-col gap-1 text-[15px] font-medium shadow-2xl animate-fadeIn">
+            <div className="lg:hidden glass rounded-2xl mt-2 p-3 sm:p-4 flex flex-col gap-1 text-[15px] font-medium shadow-2xl animate-fadeIn max-h-[calc(100vh-6rem)] overflow-y-auto">
                 {navLinks.map((link) => (
                 <a
                     key={link.id}

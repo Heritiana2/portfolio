@@ -20,31 +20,31 @@ export default function ProjectModal({ project, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[200] flex items-center justify-center p-4 modal-bg"
+      className="fixed inset-0 z-[200] flex items-center justify-center p-3 sm:p-4 modal-bg"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <div
-        className="glass rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto grad-border relative"
+        className="glass rounded-3xl max-w-3xl w-full max-h-[90vh] max-h-[90dvh] overflow-y-auto grad-border relative"
         style={{ background: 'var(--bg2)' }}
       >
-        <div className="relative h-64 sm:h-80">
+        <div className="relative h-52 sm:h-80">
           <img src={project.img} alt={project.title} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0b1e] via-black/30 to-transparent" />
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 w-10 h-10 rounded-xl bg-black/60 backdrop-blur text-white flex items-center justify-center hover:scale-110 transition border border-white/20"
+            className="absolute top-3 right-3 sm:top-4 sm:right-4 w-10 h-10 rounded-xl bg-black/60 backdrop-blur text-white flex items-center justify-center hover:scale-110 transition border border-white/20"
           >
             <X className="w-5 h-5" />
           </button>
-          <div className="absolute bottom-5 left-6 right-6">
+          <div className="absolute bottom-4 sm:bottom-5 left-4 sm:left-6 right-4 sm:right-6">
             <span className="chip px-3 py-1 rounded-full grad-bg text-white font-bold uppercase text-[11px]">
               {project.cat} • {project.year}
             </span>
-            <h3 className="font-grotesk font-bold text-2xl text-white mt-2 leading-tight">{project.title}</h3>
+            <h3 className="font-grotesk font-bold text-xl sm:text-2xl text-white mt-2 leading-tight break-words">{project.title}</h3>
           </div>
         </div>
 
-        <div className="p-6 sm:p-8">
+        <div className="p-5 sm:p-8">
           <div className="flex flex-wrap gap-2 mb-5">
             {project.tech.map((t) => (
               <span
@@ -57,11 +57,11 @@ export default function ProjectModal({ project, onClose }) {
           </div>
           <p className="opacity-75 leading-relaxed text-[15px]">{project.long}</p>
 
-          <div className="grid grid-cols-3 gap-3 my-6">
+          <div className="grid grid-cols-3 gap-2 sm:gap-3 my-6">
             {project.stats.map(([v, l]) => (
-              <div key={l} className="glass rounded-2xl p-4 text-center">
-                <div className="font-grotesk font-bold text-xl grad-text">{v}</div>
-                <div className="text-[11px] opacity-60 mt-1">{l}</div>
+              <div key={l} className="glass rounded-2xl p-3 sm:p-4 text-center">
+                <div className="font-grotesk font-bold text-lg sm:text-xl grad-text break-words">{v}</div>
+                <div className="text-[10px] sm:text-[11px] opacity-60 mt-1 break-words">{l}</div>
               </div>
             ))}
           </div>
@@ -91,7 +91,7 @@ export default function ProjectModal({ project, onClose }) {
             </div>
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             {hasDemo && (
               <a
                 href={project.demo}

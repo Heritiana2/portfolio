@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { MapPin, Cake, Phone, Briefcase, Copy } from 'lucide-react';
 import Reveal from './Reveal';
 import { PROFILE } from '../data/portfolioData';
@@ -71,7 +71,7 @@ function Heatmap() {
       <img
         src={`https://ghchart.rshah.org/7c3aed/${PROFILE.github.split('/').pop()}`}
         alt="Activité GitHub de Heritiana"
-        className="w-full min-w-[500px] h-auto rounded-lg filter drop-shadow opacity-90 hover:opacity-100 transition"
+        className="w-full min-w-[420px] sm:min-w-[500px] h-auto rounded-lg filter drop-shadow opacity-90 hover:opacity-100 transition"
       />
     </div>
   );
@@ -85,7 +85,7 @@ export default function About() {
   };
 
   return (
-    <section id="apropos" className="py-24 relative">
+    <section id="apropos" className="py-16 sm:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <Reveal className="flex items-center gap-3 font-mono text-sm text-cyan-400 mb-3">
           <span className="w-10 h-[2px] grad-bg rounded" />
@@ -93,7 +93,7 @@ export default function About() {
         </Reveal>
         <Reveal
           as="h2"
-          className="font-grotesk font-bold text-[clamp(2rem,4.5vw,3.2rem)] leading-tight mb-12"
+          className="font-grotesk font-bold text-[clamp(2rem,4.5vw,3.2rem)] leading-tight mb-8 sm:mb-12"
         >
           Étudiant passionné,
           <br />
@@ -101,21 +101,21 @@ export default function About() {
         </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          <Reveal className="glass rounded-3xl p-7 sm:p-9 grad-border noise relative overflow-hidden">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-2xl grad-bg flex items-center justify-center font-grotesk font-bold text-white text-2xl">
+          <Reveal className="glass rounded-3xl p-5 sm:p-9 grad-border noise relative overflow-hidden">
+            <div className="flex items-center gap-3 sm:gap-4 mb-6">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl grad-bg flex items-center justify-center font-grotesk font-bold text-white text-xl sm:text-2xl shrink-0">
                 H
               </div>
-              <div>
-                <h3 className="font-grotesk font-bold text-xl">Salut, moi c'est {PROFILE.shortName} 👋</h3>
-                <p className="font-mono text-[13px] opacity-60">{PROFILE.email}</p>
+              <div className="min-w-0 flex-1">
+                <h3 className="font-grotesk font-bold text-lg sm:text-xl leading-snug">Salut, moi c'est {PROFILE.shortName} 👋</h3>
+                <p className="font-mono text-[11px] sm:text-[13px] opacity-60 break-all">{PROFILE.email}</p>
               </div>
               <button
                 onClick={copyEmail}
                 title="Copier l'email"
-                className="ml-auto w-10 h-10 rounded-xl glass flex items-center justify-center hover:scale-110 transition"
+                className="shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-xl glass flex items-center justify-center hover:scale-110 transition"
               >
-                <Copy className="w-5 h-5 text-cyan-400" />
+                <Copy className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
               </button>
             </div>
             <p className="leading-relaxed opacity-75">
@@ -170,13 +170,13 @@ export default function About() {
           </Reveal>
 
           <div className="flex flex-col gap-6">
-            <Reveal className="glass rounded-3xl p-7 grad-border">
+            <Reveal className="glass rounded-3xl p-5 sm:p-7 grad-border">
               <div className="flex gap-2 mb-5 flex-wrap">
                 {TABS.map((t) => (
                   <button
                     key={t.id}
                     onClick={() => setTab(t.id)}
-                    className={`tab-btn px-5 py-2 rounded-xl text-sm font-semibold transition ${
+                    className={`tab-btn px-4 sm:px-5 py-2 rounded-xl text-[13px] sm:text-sm font-semibold transition ${
                       tab === t.id ? 'active' : 'glass'
                     }`}
                   >
@@ -225,17 +225,17 @@ export default function About() {
               )}
             </Reveal>
 
-              <Reveal className="glass rounded-3xl p-7">
-              <div className="flex items-center justify-between mb-4">
-                <h4 className="font-grotesk font-bold flex items-center gap-2">
+              <Reveal className="glass rounded-3xl p-5 sm:p-7">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                <h4 className="font-grotesk font-bold flex flex-wrap items-center gap-2 min-w-0">
                   Activité Git
-                  <span className="text-[11px] font-mono opacity-50 font-normal">En direct depuis GitHub</span>
+                  <span className="hidden sm:inline text-[11px] font-mono opacity-50 font-normal">En direct depuis GitHub</span>
                 </h4>
                 <a
                   href={PROFILE.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="chip px-3 py-1 rounded-full bg-green-500/15 text-green-400 border border-green-500/30 text-xs hover:scale-105 transition"
+                  className="chip shrink-0 px-3 py-1 rounded-full bg-green-500/15 text-green-400 border border-green-500/30 text-xs hover:scale-105 transition"
                 >
                   🟢 @heritiana2
                 </a>
@@ -244,9 +244,9 @@ export default function About() {
               {/* Vrai graphe GitHub */}
               <Heatmap />
 
-              <div className="flex justify-between text-[11px] font-mono opacity-50 mt-3">
+              <div className="flex justify-between gap-2 text-[10px] sm:text-[11px] font-mono opacity-50 mt-3">
                 <span>Moins</span>
-                <span>Contributions réelles des 12 derniers mois</span>
+                <span className="text-center">12 derniers mois</span>
                 <span>Plus</span>
               </div>
             </Reveal>
@@ -256,26 +256,26 @@ export default function About() {
                 href={PROFILE.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass rounded-2xl p-4 text-center hover:scale-[1.04] transition-transform grad-border"
+                className="glass rounded-2xl p-2.5 sm:p-4 text-center hover:scale-[1.04] transition-transform grad-border"
               >
                 <div className="text-2xl">in</div>
-                <div className="text-[13px] font-bold mt-2">LinkedIn</div>
-                <div className="text-[11px] opacity-60">Réseau pro</div>
+                <div className="text-[12px] sm:text-[13px] font-bold mt-2">LinkedIn</div>
+                <div className="text-[10px] sm:text-[11px] opacity-60">Réseau pro</div>
               </a>
               <a
                 href={PROFILE.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass rounded-2xl p-4 text-center hover:scale-[1.04] transition-transform grad-border"
+                className="glass rounded-2xl p-2.5 sm:p-4 text-center hover:scale-[1.04] transition-transform grad-border"
               >
                 <div className="text-2xl">🐙</div>
-                <div className="text-[13px] font-bold mt-2">GitHub</div>
-                <div className="text-[11px] opacity-60">Mes projets</div>
+                <div className="text-[12px] sm:text-[13px] font-bold mt-2">GitHub</div>
+                <div className="text-[10px] sm:text-[11px] opacity-60">Mes projets</div>
               </a>
-              <div className="glass rounded-2xl p-4 text-center grad-border">
+              <div className="glass rounded-2xl p-2.5 sm:p-4 text-center grad-border">
                 <div className="text-2xl">🎓</div>
-                <div className="text-[13px] font-bold mt-2">L3</div>
-                <div className="text-[11px] opacity-60">Informatique</div>
+                <div className="text-[12px] sm:text-[13px] font-bold mt-2">L3</div>
+                <div className="text-[10px] sm:text-[11px] opacity-60">Informatique</div>
               </div>
             </Reveal>
           </div>

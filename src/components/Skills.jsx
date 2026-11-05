@@ -16,7 +16,7 @@ export default function Skills() {
   const filtered = SKILLS.filter((s) => filter === 'all' || s.cat === filter);
 
   return (
-    <section id="competences" className="py-24 relative" style={{ background: 'var(--bg2)' }}>
+    <section id="competences" className="py-16 sm:py-24 relative" style={{ background: 'var(--bg2)' }}>
       <div className="orb w-[400px] h-[400px] bg-violet-700/30 top-10 right-0" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
         <Reveal className="flex items-center gap-3 font-mono text-sm text-cyan-400 mb-3">
@@ -35,7 +35,7 @@ export default function Skills() {
             <button
               key={f.id}
               onClick={() => setFilter(f.id)}
-              className={`filter-btn px-5 py-2.5 rounded-xl glass text-sm font-semibold ${
+              className={`filter-btn px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl glass text-[13px] sm:text-sm font-semibold ${
                 filter === f.id ? 'active' : ''
               }`}
             >
@@ -45,7 +45,7 @@ export default function Skills() {
         </Reveal>
 
         <div className="grid lg:grid-cols-[1fr_.9fr] gap-8 mt-8">
-          <Reveal className="glass rounded-3xl p-7 sm:p-8 grad-border">
+          <Reveal className="glass rounded-3xl p-5 sm:p-8 grad-border">
             <div className="flex flex-col gap-6">
               {filtered.map((s, i) => (
                 <SkillBar key={s.name} skill={s} index={i} />
@@ -54,24 +54,24 @@ export default function Skills() {
           </Reveal>
 
           <div className="flex flex-col gap-6">
-            <Reveal className="glass rounded-3xl p-7">
+            <Reveal className="glass rounded-3xl p-5 sm:p-7">
               <h4 className="font-grotesk font-bold mb-1">Radar de maîtrise</h4>
               <p className="text-[13px] opacity-50 mb-4 font-mono">Évaluation sur projets réels</p>
-              <div className="h-[300px] text-slate-600 dark:text-slate-300">
+              <div className="h-[260px] sm:h-[300px] text-slate-600 dark:text-slate-300">
                 <RadarChart labels={RADAR.labels} values={RADAR.values} />
               </div>
             </Reveal>
 
-            <Reveal className="glass rounded-3xl p-7">
+            <Reveal className="glass rounded-3xl p-5 sm:p-7">
               <h4 className="font-grotesk font-bold mb-4">Outils & environnement</h4>
-              <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 sm:gap-3">
                 {TOOLS.map(([icon, name]) => (
                   <div
                     key={name}
-                    className="glass rounded-2xl p-3 text-center hover:scale-105 transition-transform cursor-default"
+                    className="glass rounded-2xl p-2 sm:p-3 text-center hover:scale-105 transition-transform cursor-default"
                   >
-                    <div className="text-2xl">{icon}</div>
-                    <div className="text-[12px] font-semibold mt-2">{name}</div>
+                    <div className="text-xl sm:text-2xl">{icon}</div>
+                    <div className="text-[10px] sm:text-[12px] font-semibold mt-2 break-words">{name}</div>
                   </div>
                 ))}
               </div>

@@ -33,13 +33,13 @@ export default function Preloader() {
       <div className="text-sm text-slate-400 mt-2 font-mono">
         Initialisation du portfolio... {Math.floor(progress)}%
       </div>
-      <div className="w-[260px] h-[3px] bg-white/10 rounded-full overflow-hidden mt-6">
+      <div className="w-[260px] max-w-[80vw] h-[3px] bg-white/10 rounded-full overflow-hidden mt-6">
         <div
           className="h-full rounded-full transition-all duration-150"
           style={{ width: `${progress}%`, background: 'linear-gradient(90deg,#7c3aed,#06b6d4,#f472b6)' }}
         />
       </div>
-      <div className="flex gap-2 mt-6 font-mono text-[11px] text-slate-500">
+      <div className="flex flex-wrap justify-center gap-2 mt-6 px-4 font-mono text-[10px] sm:text-[11px] text-slate-500">
         <span className="px-2 py-1 rounded bg-white/5 border border-white/10">React</span>
         <span className="px-2 py-1 rounded bg-white/5 border border-white/10">Node.js</span>
          <span className="px-2 py-1 rounded bg-white/5 border border-white/10">Java</span>

@@ -16,7 +16,7 @@ export default function Toaster() {
   }, []);
 
   return (
-    <div className="fixed bottom-6 left-6 z-[300] flex flex-col gap-3 max-w-[340px]">
+    <div className="fixed bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto z-[300] flex flex-col gap-3 sm:max-w-[340px]">
       {toasts.map((t) => (
         <div
           key={t.id}
@@ -30,8 +30,8 @@ export default function Toaster() {
           >
             {t.type === 'error' ? '⚠️' : '✓'}
           </div>
-          <div className="flex-1">
-            <div className="font-bold text-sm">{t.title}</div>
+          <div className="flex-1 min-w-0">
+            <div className="font-bold text-sm break-words">{t.title}</div>
             {t.sub ? <div className="text-[13px] opacity-60 mt-0.5">{t.sub}</div> : null}
           </div>
         </div>
