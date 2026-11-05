@@ -16,7 +16,7 @@ export default function Skills() {
   const filtered = SKILLS.filter((s) => filter === 'all' || s.cat === filter);
 
   return (
-    <section id="competences" className="py-16 sm:py-24 relative" style={{ background: 'var(--bg2)' }}>
+    <section id="competences" className="py-16 sm:py-24 relative overflow-hidden" style={{ background: 'var(--bg2)' }}>
       <div className="orb w-[400px] h-[400px] bg-violet-700/30 top-10 right-0" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
         <Reveal className="flex items-center gap-3 font-mono text-sm text-cyan-400 mb-3">

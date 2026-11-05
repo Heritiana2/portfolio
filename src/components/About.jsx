@@ -67,11 +67,11 @@ const SocialIcons = {
 
 function Heatmap() {
   return (
-    <div className="overflow-x-auto py-2">
+    <div className="py-2 overflow-hidden">
       <img
         src={`https://ghchart.rshah.org/7c3aed/${PROFILE.github.split('/').pop()}`}
         alt="Activité GitHub de Heritiana"
-        className="w-full min-w-[420px] sm:min-w-[500px] h-auto rounded-lg filter drop-shadow opacity-90 hover:opacity-100 transition"
+        className="w-full h-auto rounded-lg filter drop-shadow opacity-90 hover:opacity-100 transition"
       />
     </div>
   );
