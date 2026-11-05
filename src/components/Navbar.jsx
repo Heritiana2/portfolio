@@ -42,30 +42,30 @@ const Navbar = ({ darkMode, setDarkMode }) => {
     ];
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-3 sm:px-6">  
-            <div className={`glass rounded-2xl mt-4 px-3 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-2 relative overflow-hidden transition-all duration-300 ${scrolled ? 'shadow-2xl border-white/20' : ''}`}>
+        <header className="fixed top-0 left-0 right-0 z-50 w-full max-w-full overflow-x-clip transition-all duration-300">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6">  
+            <div className={`glass rounded-2xl mt-4 px-2.5 sm:px-4 md:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-2 min-w-0 relative overflow-hidden transition-all duration-300 ${scrolled ? 'shadow-2xl border-white/20' : ''}`}>
             
             {/* LOGO */}
-            <a href="#accueil" className="flex items-center gap-2 sm:gap-3 group min-w-0">
+            <a href="#accueil" className="flex items-center gap-2 sm:gap-3 group min-w-0 shrink">
                 <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl grad-bg flex items-center justify-center font-bold text-white text-base sm:text-lg shadow-lg shadow-purple-600/30 group-hover:rotate-12 transition-transform shrink-0">
                 H
                 </div>
-                <div className="leading-tight min-w-0">
-                <div className="font-bold text-[15px] sm:text-[17px] tracking-tight whitespace-nowrap">
+                <div className="leading-tight min-w-0 overflow-hidden">
+                <div className="font-bold text-[14px] sm:text-[17px] tracking-tight truncate">
                     heritiana<span className="grad-text">.dev</span>
                 </div>
-                <div className="text-[10px] sm:text-[11px] font-mono opacity-60 whitespace-nowrap">Dévéloppeur Junior</div>
+                <div className="text-[10px] sm:text-[11px] font-mono opacity-60 truncate">Dévéloppeur Junior</div>
                 </div>
             </a>
 
             {/* DESKTOP NAVIGATION */}
-            <nav className="hidden lg:flex items-center gap-7 text-[14px] font-medium">
+            <nav className="hidden xl:flex items-center gap-5 2xl:gap-7 text-[13px] 2xl:text-[14px] font-medium shrink min-w-0">
                 {navLinks.map((link) => (
                 <a
                     key={link.id}
                     href={link.href}
-                    className={`nav-link transition-colors ${
+                    className={`nav-link whitespace-nowrap transition-colors ${
                     activeSection === link.id ? 'active text-cyan-400 font-semibold' : 'opacity-70 hover:opacity-100'
                     }`}
                 >
@@ -75,7 +75,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             </nav>
 
             {/* ACTIONS (THEME & CTA) */}
-            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            <div className="flex items-center gap-1.5 sm:gap-2 2xl:gap-3 shrink-0">
                 {/* Toggle Dark/Light Mode */}
                 <button
                 onClick={() => setDarkMode(!darkMode)}
@@ -88,7 +88,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                 {/* CTA Button */}
                 <a
                 href="#contact"
-                className="hidden sm:inline-flex grad-bg text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-purple-600/30 hover:shadow-cyan-500/30 hover:scale-[1.03] transition-all items-center gap-2"
+                className="hidden xl:inline-flex grad-bg text-white text-sm font-semibold px-4 2xl:px-5 py-2.5 rounded-xl shadow-lg shadow-purple-600/30 hover:shadow-cyan-500/30 hover:scale-[1.03] transition-all items-center gap-2 whitespace-nowrap"
                 >
                 Me contacter <ArrowRight className="w-4 h-4" />
                 </a>
@@ -97,7 +97,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                 <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Ouvrir le menu"
-                className="lg:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-xl glass flex items-center justify-center"
+                className="xl:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-xl glass flex items-center justify-center"
                 >
                 {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                 </button>
@@ -106,7 +106,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
             {/* MOBILE MENU DROPDOWN */}
             {isMenuOpen && (
-            <div className="lg:hidden glass rounded-2xl mt-2 p-3 sm:p-4 flex flex-col gap-1 text-[15px] font-medium shadow-2xl animate-fadeIn max-h-[calc(100vh-6rem)] overflow-y-auto">
+            <div className="xl:hidden glass rounded-2xl mt-2 p-3 sm:p-4 flex flex-col gap-1 text-[15px] font-medium shadow-2xl animate-fadeIn max-h-[calc(100vh-6rem)] overflow-y-auto overflow-x-hidden">
                 {navLinks.map((link) => (
                 <a
                     key={link.id}
